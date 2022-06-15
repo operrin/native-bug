@@ -12,11 +12,11 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 public class IntervenantRouter {
     @Bean
     public RouterFunction<ServerResponse> routerFunction(IntervenantHandler intervenantHandler) {
-     return route(GET("/intervenants").and(accept(MediaType.APPLICATION_JSON)), intervenantHandler::getAllIntervenants)
-         .andRoute(GET("/intervenants/{id}").and(accept(MediaType.APPLICATION_JSON)), intervenantHandler::getIntervenantById)
-         .andRoute(POST("/intervenants"), intervenantHandler::saveIntervenant)
-         .andRoute(DELETE("/intervenants/{id}"), intervenantHandler::deleteIntervenant)
-         .andRoute(PUT("/intervenants/{id}"), intervenantHandler::updateIntervenant)
-         .andRoute(PATCH("/intervenants/{id}"), intervenantHandler::updateIntervenant);
- }
+        return route(GET("/intervenants").and(accept(MediaType.APPLICATION_JSON)), intervenantHandler::getAllIntervenants)
+                .andRoute(GET("/intervenants/{id}").and(accept(MediaType.APPLICATION_JSON)), intervenantHandler::getIntervenantById)
+                .andRoute(POST("/intervenants"), intervenantHandler::saveIntervenant)
+                .andRoute(DELETE("/intervenants/{id}"), intervenantHandler::deleteIntervenant)
+                .andRoute(PUT("/intervenants/{id}"), intervenantHandler::updateIntervenant)
+                .andRoute(PATCH("/intervenants/{id}"), intervenantHandler::updateIntervenant);
+    }
 }
